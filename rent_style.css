@@ -71,14 +71,15 @@ main{
   padding: 5px 10px;
   margin-left: 10px; 
   text-decoration: none;
-  color: rgb(109, 32, 197);
+  color: rgb(0, 0, 0);
   display: inline-block;
 }
-/* .navigationMenu > a:hover{
+.navigationMenu > a:hover{
+  border-radius: 10px;
   transition: ease-in-out 400ms;
   background: rgb(95, 240, 12);
   color: rgb(189, 43, 226);
-} */
+}
 .center{
   display: flex;
   flex-direction: column;
