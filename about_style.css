@@ -80,6 +80,16 @@ main{
   background: rgb(95, 240, 12);
   color: rgb(189, 43, 226);
 }
+#signup{
+  background-color: rgb(65, 64, 64);
+  color: white;
+  border-radius: 11px;
+  font-weight: bold;
+  text-align: center;;
+  padding: 8px;
+  width: 10%;
+  height: 130%;
+}
 .body{
   display: flex;
   justify-content: center;
