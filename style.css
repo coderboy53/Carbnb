@@ -77,8 +77,8 @@ main{
 .navigationMenu > a:hover{
   border-radius: 10px;
   transition: ease-in-out 400ms;
-  background: rgb(95, 240, 12);
-  color: rgb(189, 43, 226);
+  background: rgb(65, 64, 64);
+  color: white;
 }
 #signup{
   background-color: rgb(65, 64, 64);
