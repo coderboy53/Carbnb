@@ -77,8 +77,8 @@ main{
 .navigationMenu > a:hover{
   border-radius: 10px;
   transition: ease-in-out 400ms;
-  background: rgb(95, 240, 12);
-  color: rgb(189, 43, 226);
+  background: rgb(65, 64, 64);
+  color: white;
 }
 #signup{
   background-color: rgb(65, 64, 64);
@@ -89,6 +89,9 @@ main{
   padding: 8px;
   width: 10%;
   height: 130%;
+}
+#signup:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
 .center{
   display: flex;
@@ -183,5 +186,5 @@ input[type=submit]{
 }
 input[type=submit]:hover{
   transition-delay: ease-in-out 200ms;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
