@@ -18,9 +18,17 @@ body{
   width: 100%;
   height: 100vh;
 }
+.title > a{ 
+  text-decoration: none;
+  color: black;
+}
+.title > a::after{
+  text-decoration: none;
+  color: black;
+}
 #div1{
   background-color: rgb(255 255 255 / 95%);
-  margin-block-start: 80px;
+  margin-block-start: 50px;
   margin-left: 500px;
   float: center;
   height: 550px;
