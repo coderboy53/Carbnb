@@ -188,3 +188,10 @@ input[type=submit]:hover{
   transition-delay: ease-in-out 200ms;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
+p{
+  font-size: 20px;
+  text-align: justify;
+  line-height: 1.6;
+  margin: 10px 20px;
+  text-justify: inter-word;
+}
