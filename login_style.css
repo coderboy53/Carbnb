@@ -14,6 +14,8 @@ body{
   display: flex;
   flex-direction: column;
   padding: 2em;
+  align-items: center;
+  justify-items: center;
   margin: 0;
   width: 100%;
   height: 100vh;
@@ -33,6 +35,8 @@ body{
   float: center;
   height: 550px;
   width: 450px;
+  align-items: center;
+  justify-items: center;
   border-radius: 20px;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
