@@ -84,7 +84,7 @@ main{
   color: white;
   border-radius: 11px;
   font-weight: bold;
-  text-align: center;
+  text-align: center;;
   padding: 8px;
   width: 10%;
   height: 130%;
@@ -121,22 +121,23 @@ main{
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  width: 310%;
+  width: 200%;
   margin: 10px;
 }
 select{
   background-color: rgb(255 255 255 / 60%);
-  border: 1px solid gray;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  color: black;
+  border: 1px solid gray;
+  color: gray;
   width: 40%;
   height: 50px;
-  margin-block-end: 8px; 
   padding: 8px;
+  margin-block-end: 8px; 
   font-size: 16px;
   border-radius: 10px;
   font-family: "Ubuntu", sans-serif;
 }
+
 select:hover{
   transition-delay: ease-in-out 200ms;
   background-color: rgb(200 200 200 / 60%);
@@ -146,6 +147,7 @@ input{
   height: 50px;
   border: 1px solid gray;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 8px;
   margin-block-end: 8px; 
   border-radius: 10px;
   font-family: "Ubuntu", sans-serif;
@@ -187,6 +189,6 @@ form > textarea{
   border-radius: 10px;
   font-family: "Ubuntu", sans-serif;
   font-size: 16px;
+  padding: 8px;
   background-color: rgb(255 255 255 / 60%);
 }
-© 2021 GitHub, Inc.
