@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>contact Us</title>
+    <link href="contactUs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <main class ='main'>
+     <nav class = 'navBar'>
+       <div class ='title'>
+         <img src = './images/logo.png'>
+         <h1 class = 'sitehead'>Carbnb</h1>
+       </div>
+       <div class = 'navigationMenu'>
+         <a href = './index.html'>Home</a>
+         <a href = './about.html'>About</a>
+         <a href = './rent.html'>Rent a Car</a>
+         <a href = '/regist_car.html'>Register your Car</a>
+         <a href = './safety.html'>Safety</a>
+         <a href = '#contact'>Contact Us</a>
+         <a href ='./login.html' id = "signup">Sign In</a>
+       </div>
+     </nav>
+       <div class = 'center'>
+         <div id= "carform">
+           <br>
+           <br>
+           <h1 class = "formhead">Contact Us</h1>
+           <br>
+           <br>
+            <form>
+              <input type = "text" id = "name" placeholder="Name"><br>
+              <input type = "email" id="email" placeholder="Email"><br>
+              <input type = "text" id="phno" placeholder="Phone No"><br>
+              <select name="location" id = "location">
+                <option value="select" selected disabled hidden>Location</option>
+                <option value="klk">Kolkata</option>
+                <option value="chn">Chennai</option>
+                <option value="mmb">Mumbai</option>
+                <option value="dlh">Delhi</option>
+              </select><br>
+              <select name="userType" id = "userType">
+                <option value="select" selected disabled hidden>User Type</option>
+                <option value="tenant">Car Tenant</option>
+                <option value="renter">Car Renter</option>
+              </select><br>
+              <select name="reviewType" id = "reviewType">
+                <option value="select" selected disabled hidden>Review Type</option>
+                <option value="query">Query</option>
+                <option value="suggestions">Suggestions</option>
+                <option value="Complaint">Complaint</option>
+              </select><br><br>
+              <textarea placeholder="Enter your Review" id="textarea" rows='10' cols='40'></textarea>
+              <br><br>
+              <input type="submit" value="Submit">
+            </form>
+          <br><br>
+          <p>2021 © Carbnb. All rights reserved.<br><br></p>
+          </div>
+       </div>
+     </main>
+  </body>
+</html>
