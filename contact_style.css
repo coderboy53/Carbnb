@@ -125,16 +125,18 @@ main{
   margin: 10px;
 }
 select{
-  background-color: rgb(177, 177, 177);
+  background-color: rgb(255 255 255 / 60%);
   border: 1px solid gray;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   color: black;
-  width: 20%;
+  width: 40%;
+  height: 50px;
+  margin-block-end: 8px; 
   padding: 8px;
   font-size: 16px;
-  border-radius: 12px;
+  border-radius: 10px;
   font-family: "Ubuntu", sans-serif;
 }
-
 select:hover{
   transition-delay: ease-in-out 200ms;
   background-color: rgb(200 200 200 / 60%);
