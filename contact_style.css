@@ -128,7 +128,7 @@ select{
   background-color: rgb(255 255 255 / 60%);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border: 1px solid gray;
-  color: gray;
+  color: black;
   width: 40%;
   height: 50px;
   padding: 8px;
