@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Search Results</title>
+    <link href="search_results.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <main class ='main'>
+    <!-- Edit NavBar at assets/navbar.php -->
+    <?php include('assets/navbar.php') ?>
+    <div class = "body">
+      <h1>Search Results</h1>
+    </div>
+    <div class="dropdown">
+        <select name="location" id="locat">
+          <option value="select" selected disabled hidden>Location</option>
+          <option value="klk">Kolkata</option>
+          <option value="chn">Chennai</option>
+          <option value="mmb">Mumbai</option>
+          <option value="dlh">Delhi</option>
+        </select>
+        <input type = "text" id = "searchbox" name = "Search" placeholder="Search Car">
+        <input class = "dates" id="f_date" type = "text" placeholder = "From date" onfocus = "(this.type='date')" onblur= "(this.type='text')">
+        <input class = "dates" id="t_date" type = "text" placeholder = "To date" onfocus = "(this.type='date')" onblur= "(this.type='text')">
+        <input type="submit" value=Search>
+    </div> 
+    <br><br> 
+    <table style="width:100%">  
+        <tr>
+            <td style="width:30%">image1</td>
+            <td style="width:60%">Tata Sumo <br>4 seater <br> Owner: A<br>Rate: 1000 per day</td>
+            <td style="width:10%"> <input type="button" value="Book"></td>
+        </tr>
+        <tr>
+            <td>image1</td>
+            <td>Tata Sumo <br> 4 seater <br> Owner: B<br>Rate: 1000 per day</td>
+            <td> <input type="button" value="Book"></td>
+        </tr>
+        <tr>
+            <td>image1</td>
+            <td>Tata Sumo <br> 4 seater <br> Owner: C<br>Rate: 1000 per day</td>
+            <td> <input type="button" value="Book"></td>
+        </tr>
+        <tr>
+            <td>image1</td>
+            <td>Tata Sumo <br> 4 seater <br> Owner: D<br>Rate: 1000 per day</td>
+            <td> <input type="button" value="Book"></td>
+        </tr>
+        <tr>
+            <td>image1</td>
+            <td>Tata Sumo <br> 4 seater <br> Owner: E<br>Rate: 1000 per day</td>
+            <td> <input type="button" value="Book"></td>
+        </tr>
+    </table>
+   </main>
+  </body>
+</html>
+
