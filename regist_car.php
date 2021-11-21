@@ -28,27 +28,10 @@
              <option class="opt" id="seven">Seven seater</option>
              <option class="opt" id="nine">Nine seater</option>
            </select><br>
-           <select id="company">
-             <option id="defopt" selected disabled hidden>Company</option> 
-             <option class="opt">Hyundai</option>
-             <option class="opt">Maruti Suzuki</option>
-             <option class="opt">Tata</option>
-             <option class="opt">Honda</option>
-             <option class="opt">Toyota</option>
-             <option class="opt">Mahindra</option>
-             <option class="opt">Mercedes</option>
-             <option class="opt">Tata</option>
-             <option class="opt">Volkswagen</option>
-           </select><br>
+           <input type="text" id="company" placeholder="Company"><br>
            <input type = "text" id = "model" placeholder="Enter Car model"><br>
            <input type = "text" id = "age" pattern="^[0-9]?[1-9]" placeholder="Enter Car age"><br>
-           <select name="location" id="locat">
-            <option value="select" selected disabled hidden>Location</option>
-            <option value="klk">Kolkata</option>
-            <option value="chn">Chennai</option>
-            <option value="mmb">Mumbai</option>
-            <option value="dlh">Delhi</option>
-          </select><br><br>
+           <input type="text" id="locat" placeholder="Location"><br><br>
           <input type="submit" value="Register">
          </form>
          <br>
