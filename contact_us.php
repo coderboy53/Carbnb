@@ -72,7 +72,7 @@
 
     $sql = "INSERT INTO feedback(NAME, EMAIL, PHONENUMBER, LOCATION, REVIEW_TYPE, DESCRIPTION, STATUS, A_ID) VALUES ('$fullname','$email','$phone','$location','$reviewType','$reviewDesc','$status','$a_id')";
     
-    $res = mysqli_query($conn, $sql) or die(mysqli_error());
+    $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
     if($res == TRUE)
     {
       echo '<script>alert("Your feedback has been submitted successfully!")</script>';
