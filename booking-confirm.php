@@ -10,10 +10,13 @@
 <body>
     <main class="main">
     <?php include('assets/navbar.php') ?>
-    <div class="center">
-        <h1>Confirm your booking details</h1>
-
-    </div>
+        <div class="center">
+            <h1>Confirm your booking details</h1>
+            <div class = 'confirm'>
+                <input type="submit" value="Confirm Order">
+            </div>
+        </div>
+        
     </main>
 </body>
 </html>

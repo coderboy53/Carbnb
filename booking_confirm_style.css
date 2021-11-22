@@ -106,66 +106,8 @@ main{
   margin: 10px;
 }
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 80%;
-}
-select{
-  background-color: rgb(255 255 255 / 20%);
-  border: 1px solid gray;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  color: black;
-  width: 20%;
-  height: 95%;
-  padding: 8px;
-  font-size: 16px;
-  border-radius: 10px;
-  font-family: "Ubuntu", sans-serif;
-}
-select:hover{
-  transition-delay: ease-in-out 200ms;
-  background-color: rgb(200 200 200 / 10%);
-}
-.dates{
-  background-color: rgb(255 255 255 / 20%);
-  border: 1px solid gray;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  color: black;
-  width: 20%;
-  height: 95%;
-  padding: 8px;
-  font-size: 16px;
-  border-radius: 10px;
-  font-family: "Ubuntu", sans-serif;
-}
-.dates:hover{
-  transition-delay: ease-in-out 200ms;
-  background-color: rgb(200 200 200 / 10%);
-}
-#searchbox{
-  display: flex;
-  width: 25%;
-  height: 100%;
-  border: 1px solid gray;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  align-items: center;
-  justify-content: left;
-  padding: 8px;
-  border-radius: 10px;
-  font-family: "Ubuntu", sans-serif;
-  font-size: 16px;
-  
-  background-color: rgb(255 255 255 / 20%);
-}
-#searchbox:hover{
-  transition-delay: ease-in-out 200ms;
-  background-color: rgb(200 200 200 / 10%);
-}
-.search{
+
+.confirm{
   display: flex;
   width: 70%;
   height: 20%;
