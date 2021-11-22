@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 13, 2021 at 06:39 PM
+-- Generation Time: Nov 22, 2021 at 05:13 PM
 -- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- PHP Version: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `ID` varchar(4) NOT NULL,
+  `ID` int(4) NOT NULL,
   `PASSWORD` varchar(15) NOT NULL,
   `NAME` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -40,12 +40,12 @@ CREATE TABLE `admin` (
 --
 
 CREATE TABLE `booking` (
-  `BOOKING_ID` varchar(4) NOT NULL,
+  `BOOKING_ID` int(11) NOT NULL,
   `DATE_OF_BOOKING` datetime NOT NULL,
   `AMOUNT` int(11) NOT NULL,
   `DURATION` int(11) NOT NULL,
   `STATUS` varchar(1) NOT NULL,
-  `R_EMAIL` varchar(30) DEFAULT NULL,
+  `R_EMAIL` varchar(50) DEFAULT NULL,
   `C_VEHICLENO` varchar(13) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -61,7 +61,7 @@ CREATE TABLE `car` (
   `MODEL` varchar(30) NOT NULL,
   `AGE` int(11) NOT NULL,
   `NO_OF_SEATS` int(11) NOT NULL,
-  `O_EMAIL` varchar(30) DEFAULT NULL
+  `O_EMAIL` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -71,10 +71,10 @@ CREATE TABLE `car` (
 --
 
 CREATE TABLE `car_review` (
-  `REVIEW_ID` varchar(4) NOT NULL,
+  `REVIEW_ID` int(11) NOT NULL,
   `DESCRIPTION` varchar(800) NOT NULL,
   `VEHICLENO` varchar(13) DEFAULT NULL,
-  `R_EMAIL` varchar(30) DEFAULT NULL,
+  `R_EMAIL` varchar(50) DEFAULT NULL,
   `SCORE` int(11) NOT NULL CHECK (`SCORE` <= 10)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -85,12 +85,12 @@ CREATE TABLE `car_review` (
 --
 
 CREATE TABLE `feedback` (
-  `FEEDBACK_ID` varchar(4) NOT NULL,
+  `FEEDBACK_ID` int(11) NOT NULL,
   `NAME` varchar(30) NOT NULL,
-  `EMAIL` varchar(30) NOT NULL,
-  `PHONENUMBER` int(11) NOT NULL,
+  `EMAIL` varchar(50) NOT NULL,
+  `PHONENUMBER` bigint(10) NOT NULL,
   `LOCATION` varchar(30) NOT NULL,
-  `REVIEW_TYPE` varchar(1) NOT NULL CHECK (`REVIEW_TYPE` in ('Q','C','S')),
+  `REVIEW_TYPE` varchar(10) NOT NULL,
   `DESCRIPTION` varchar(800) NOT NULL,
   `STATUS` varchar(10) NOT NULL,
   `A_ID` varchar(4) DEFAULT NULL
@@ -103,9 +103,9 @@ CREATE TABLE `feedback` (
 --
 
 CREATE TABLE `owner` (
-  `EMAIL` varchar(30) NOT NULL,
+  `EMAIL` varchar(50) NOT NULL,
   `NAME` varchar(30) NOT NULL,
-  `PHONE_NO` int(11) NOT NULL,
+  `PHONE_NO` bigint(10) NOT NULL,
   `PASSWORD` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -116,11 +116,11 @@ CREATE TABLE `owner` (
 --
 
 CREATE TABLE `payments` (
-  `PAYMENT_ID` varchar(4) NOT NULL,
+  `PAYMENT_ID` int(11) NOT NULL,
   `AMOUNT` int(11) NOT NULL,
   `PAYMENT_DATE` datetime NOT NULL,
-  `R_EMAIL` varchar(30) DEFAULT NULL,
-  `A_ID` varchar(4) DEFAULT NULL,
+  `R_EMAIL` varchar(50) DEFAULT NULL,
+  `A_ID` int(4) DEFAULT NULL,
   `BOOKING_ID` varchar(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -131,20 +131,12 @@ CREATE TABLE `payments` (
 --
 
 CREATE TABLE `renter` (
-  `EMAIL` varchar(30) NOT NULL,
+  `EMAIL` varchar(50) NOT NULL,
   `NAME` varchar(30) NOT NULL,
-  `PHONE_NO` int(10) NOT NULL,
+  `PHONE_NO` bigint(10) NOT NULL,
   `DRIVING_LICENSE_NO` varchar(15) NOT NULL,
   `PASSWORD` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `renter`
---
-
-INSERT INTO `renter` (`EMAIL`, `NAME`, `PHONE_NO`, `DRIVING_LICENSE_NO`, `PASSWORD`) VALUES
-('demoaccount@vitstudent.ac.in', 'demoaccount', 2147483647, 'TNBLAH234', 'fe01ce2a7fbac8f'),
-('susindhar02@gmail.com', 'Susindhar', 2147483647, 'TNBLAH123', '5f4dcc3b5aa765d');
 
 --
 -- Indexes for dumped tables
@@ -197,6 +189,40 @@ ALTER TABLE `payments`
 --
 ALTER TABLE `renter`
   ADD PRIMARY KEY (`EMAIL`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `booking`
+--
+ALTER TABLE `booking`
+  MODIFY `BOOKING_ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `car_review`
+--
+ALTER TABLE `car_review`
+  MODIFY `REVIEW_ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `FEEDBACK_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `payments`
+--
+ALTER TABLE `payments`
+  MODIFY `PAYMENT_ID` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
