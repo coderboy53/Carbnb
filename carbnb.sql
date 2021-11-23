@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 23, 2021 at 08:24 AM
+-- Generation Time: Nov 23, 2021 at 08:52 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -74,7 +74,7 @@ CREATE TABLE `car` (
 CREATE TABLE `car_review` (
   `REVIEW_ID` int(11) NOT NULL,
   `DESCRIPTION` varchar(800) NOT NULL,
-  `VEHICLENO` varchar(13) DEFAULT NULL,
+  `VEHICLENO` varchar(13) NOT NULL,
   `O_ID` int(11) NOT NULL,
   `SCORE` int(11) NOT NULL CHECK (`SCORE` <= 10)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -94,7 +94,7 @@ CREATE TABLE `feedback` (
   `REVIEW_TYPE` varchar(10) NOT NULL,
   `DESCRIPTION` varchar(800) NOT NULL,
   `STATUS` varchar(10) NOT NULL,
-  `A_ID` varchar(4) DEFAULT NULL
+  `A_ID` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -123,7 +123,7 @@ CREATE TABLE `payments` (
   `PAYMENT_DATE` datetime NOT NULL,
   `R_ID` int(11) NOT NULL,
   `A_ID` int(4) DEFAULT NULL,
-  `BOOKING_ID` varchar(4) DEFAULT NULL
+  `BOOKING_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -156,7 +156,8 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `booking`
   ADD PRIMARY KEY (`BOOKING_ID`),
-  ADD KEY `R_ID` (`R_ID`);
+  ADD KEY `R_ID` (`R_ID`),
+  ADD KEY `C_VEHICLENO` (`C_VEHICLENO`);
 
 --
 -- Indexes for table `car`
@@ -170,13 +171,15 @@ ALTER TABLE `car`
 --
 ALTER TABLE `car_review`
   ADD PRIMARY KEY (`REVIEW_ID`),
-  ADD KEY `O_ID` (`O_ID`);
+  ADD KEY `O_ID` (`O_ID`),
+  ADD KEY `VEHICLENO` (`VEHICLENO`);
 
 --
 -- Indexes for table `feedback`
 --
 ALTER TABLE `feedback`
-  ADD PRIMARY KEY (`FEEDBACK_ID`);
+  ADD PRIMARY KEY (`FEEDBACK_ID`),
+  ADD KEY `A_ID` (`A_ID`);
 
 --
 -- Indexes for table `owner`
@@ -189,7 +192,9 @@ ALTER TABLE `owner`
 --
 ALTER TABLE `payments`
   ADD PRIMARY KEY (`PAYMENT_ID`),
-  ADD KEY `R_ID` (`R_ID`);
+  ADD KEY `R_ID` (`R_ID`),
+  ADD KEY `A_ID` (`A_ID`),
+  ADD KEY `BOOKING_ID` (`BOOKING_ID`);
 
 --
 -- Indexes for table `renter`
@@ -251,7 +256,8 @@ ALTER TABLE `renter`
 -- Constraints for table `booking`
 --
 ALTER TABLE `booking`
-  ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`R_ID`) REFERENCES `renter` (`ID`);
+  ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`R_ID`) REFERENCES `renter` (`ID`),
+  ADD CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`C_VEHICLENO`) REFERENCES `car` (`VEHICLE_NO`);
 
 --
 -- Constraints for table `car`
@@ -263,13 +269,22 @@ ALTER TABLE `car`
 -- Constraints for table `car_review`
 --
 ALTER TABLE `car_review`
-  ADD CONSTRAINT `car_review_ibfk_1` FOREIGN KEY (`O_ID`) REFERENCES `owner` (`ID`);
+  ADD CONSTRAINT `car_review_ibfk_1` FOREIGN KEY (`O_ID`) REFERENCES `owner` (`ID`),
+  ADD CONSTRAINT `car_review_ibfk_2` FOREIGN KEY (`VEHICLENO`) REFERENCES `car` (`VEHICLE_NO`);
+
+--
+-- Constraints for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD CONSTRAINT `feedback_ibfk_1` FOREIGN KEY (`A_ID`) REFERENCES `admin` (`ID`);
 
 --
 -- Constraints for table `payments`
 --
 ALTER TABLE `payments`
-  ADD CONSTRAINT `payments_ibfk_1` FOREIGN KEY (`R_ID`) REFERENCES `renter` (`ID`);
+  ADD CONSTRAINT `payments_ibfk_1` FOREIGN KEY (`R_ID`) REFERENCES `renter` (`ID`),
+  ADD CONSTRAINT `payments_ibfk_2` FOREIGN KEY (`A_ID`) REFERENCES `admin` (`ID`),
+  ADD CONSTRAINT `payments_ibfk_3` FOREIGN KEY (`BOOKING_ID`) REFERENCES `booking` (`BOOKING_ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
