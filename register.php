@@ -10,7 +10,7 @@
   <body>
      <div id = "div1">
        <div class ='title'>
-         <a href = "./index.html"><h1 class = 'sitehead'>Carbnb</h1></a>
+         <a href = "./index.php"><h1 class = 'sitehead'>Carbnb</h1></a>
        </div>
        <form action = "" method = "post">
        <div class = 'textbox'>
