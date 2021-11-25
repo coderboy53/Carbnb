@@ -63,7 +63,7 @@ else
           $from_date = $_POST['fdate'];
           $to_date = $_POST['tdate'];
             $sql = "SELECT c.VEHICLE_NO, c.COMPANY, c.MODEL, c.NO_OF_SEATS, c.RATE, o.NAME FROM car c INNER JOIN owner o ON c.O_EMAIL = o.EMAIL WHERE (c.COMPANY LIKE '%$names%' OR c.MODEL LIKE '%$names%') AND c.location LIKE '%$location%'";
-            $res = mysqli_query($conn, $sql) or die(mysqli_error());
+            $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
       ?>
       <br><br>
         <?php
