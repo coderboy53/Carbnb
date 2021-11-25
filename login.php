@@ -44,7 +44,7 @@
           <input type = "email" name = "email" class = "email" placeholder="Email">
           <input type = "password" name = "psw" id = "password" placeholder="Password">
        </div>
-       <button type="submit">Log In</button>
+       <input type="submit" name = "submit" value="Login">
        </form>
        <br><br>
        <a id = 'create' href = './register.php'>Don't have an account? Create one.</a>
