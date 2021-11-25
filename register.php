@@ -38,7 +38,7 @@
 
     $sql = "INSERT INTO renter(EMAIL,NAME,PHONE_NO,DRIVING_LICENSE_NO,PASSWORD) VALUES ('$email','$fullname','$phone','$dlno','$password')";
     
-    $res = mysqli_query($conn, $sql) or die(mysqli_error());
+    $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
     if($res == TRUE)
     {
       echo '<script>alert("An account has been created successfully!")</script>';
