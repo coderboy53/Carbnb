@@ -39,7 +39,7 @@
        <div class ='title'>
          <a href = "./index.php"><h1 class = 'sitehead'>Carbnb</h1></a>
        </div>
-       <form action="login.php" method = "POST">
+       <form action="renter_login.php" method = "POST">
        <div class = 'textbox'>
           <input type = "email" name = "email" class = "email" placeholder="Email">
           <input type = "password" name = "psw" id = "password" placeholder="Password">
