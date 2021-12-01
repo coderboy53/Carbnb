@@ -12,7 +12,7 @@
   <body>
     <main class ='main'>
       <!-- Edit NavBar at assets/navbar.php -->
-      <?php include('assets/navbar.php') ?>
+      <?php include('./assets/navbar.php') ?>
       <!-- Page content begins here -->
       <div class = "body">
         <div class = "about">

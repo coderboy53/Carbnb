@@ -11,8 +11,8 @@ else
     {
       $vehicleno = $_GET['id'];
       $conn = mysqli_connect('localhost','root','','carbnb');
-      $sql = "SELECT c.*, o.* from car c INNER JOIN owner o ON c.O_EMAIL = o.EMAIL WHERE c.VEHICLE_NO = '$vehicleno'";
-      $res = mysqli_query($conn, $sql) or die(mysqli_error());
+      $sql = "SELECT c.*, o.* from car c INNER JOIN owner o ON c.O_ID = o.O_ID WHERE c.VEHICLE_NO = '$vehicleno'";
+      $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
       $row1 = mysqli_fetch_array($res);
     }
 }
@@ -70,11 +70,11 @@ else
                     <dt class="col-6">Owner Name</dt>
                     <dd name = "brand" class="col-6"><?php echo $row1['NAME'] ?></dd>
                     <dt class="col-6">Email</dt>
-                    <dd name = "no_of_seats" class="col-6"><?php echo $row1['O_EMAIL'] ?></dd>
+                    <dd name = "no_of_seats" class="col-6"><?php echo $row1['EMAIL'] ?></dd>
                     <dt class="col-6">Phone Number</dt>
                     <dd name = "owner_name" class="col-6"><?php echo $row1['PHONE_NO'] ?></dd>
                     <dt class="col-6">Location</dt>
-                    <dd name = "rate" class="col-6"><?php echo $row1['location'] ?></dd>
+                    <dd name = "rate" class="col-6"><?php echo $row1['LOCATION'] ?></dd>
                     </dl>
                 </div>
               </div>
@@ -129,7 +129,7 @@ else
     //SQL Query to insert all these data as a row into the feedback table
     $sql = "INSERT INTO booking(FROM_DATE, AMOUNT, TO_DATE, STATUS, RENTER_ID, C_VEHICLENO) VALUES ('$fromdate','$amount','$todate','$status','$r_email','$vehicleno')";
     //Executing the Query
-    $res = mysqli_query($conn, $sql) or die(mysqli_error());
+    $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
     //Message displayed when the process is successful
     if($res == TRUE)
     {

@@ -3,7 +3,7 @@
   session_Start();
   require_once "../config/pdo.php";
   //Message to display if the user is not logged in
-  if(!isset($_SESSION['R_ID'])){
+  if(!isset($_SESSION['O_ID'])){
       header("location:../login-error.php");
   }
 ?>
@@ -19,7 +19,7 @@
   <body>
     <main class ='main'>
     <!-- Edit NavBar at assets/navbar.php -->
-    <?php include('../assets/navbar2.php') ?>
+    <?php include('../assets/navbar3.php') ?>
      <!-- Page content begins here -->
        <div class = 'center'>
          <div id= "carform">
@@ -39,10 +39,10 @@
               <!-- Entering Location -->
               <select name="location" id = "location">
                 <option value="select" selected disabled hidden>Location</option>
-                <option value="klk">Kolkata</option>
-                <option value="chn">Chennai</option>
-                <option value="mmb">Mumbai</option>
-                <option value="dlh">Delhi</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Delhi">Delhi</option>
               </select><br>
               <!-- Entering Review Type -->
               <select name="reviewType" id = "reviewType">

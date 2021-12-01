@@ -1,16 +1,16 @@
 <?php
 session_Start();
 require_once "../config/pdo.php";
-if(!isset($_SESSION['R_ID']))
+if(!isset($_SESSION['O_ID']))
 {
     header('location:../login-error.php');
     die("Please login to access this page.");
 }
 else
 {
-  $rid = $_SESSION['R_ID'];
+  $oid = $_SESSION['O_ID'];
   $con=mysqli_connect("localhost","root","","carbnb");
-  $sql1 = "SELECT r.*, b.*,c.*,o.* FROM renter r INNER JOIN booking b INNER JOIN car c INNER JOIN owner o ON r.R_ID = b.RENTER_ID AND b.C_VEHICLENO = c.VEHICLE_NO AND c.O_ID = o.O_ID WHERE r.R_ID = '$rid' ORDER BY b.BOOKING_ID;";
+  $sql1 = "SELECT r.NAME, b.BOOKING_ID,b.AMOUNT,b.FROM_DATE,b.TO_DATE,c.COMPANY,c.LOCATION,c.MODEL FROM owner o INNER JOIN booking b INNER JOIN car c INNER JOIN renter r ON r.R_ID = b.RENTER_ID AND b.C_VEHICLENO = c.VEHICLE_NO AND c.O_ID = o.O_ID WHERE o.O_ID = '$oid' ORDER BY b.BOOKING_ID;";
   $exc = mysqli_query($con, $sql1);
 }
 ?>
@@ -28,7 +28,7 @@ else
   <body>
     <main class ='main'>
       <!-- Edit NavBar at assets/navbar2.php -->
-      <?php include('../assets/navbar2.php') ?>
+      <?php include('../assets/navbar3.php') ?>
       <!-- Page content begins here -->
       <br><br><br>
       <div class = "row justify-content-center">
@@ -54,8 +54,8 @@ else
                   <dd name = "brand" class="col-6"><?php echo $row1['COMPANY'] ?> - <?php echo $row1['MODEL'] ?></dd>
                   <dt class="col-6">City</dt>
                   <dd name = "no_of_seats" class="col-6"><?php echo $row1['LOCATION'] ?></dd>
-                  <dt class="col-6">Owner</dt>
-                  <dd name = "owner_name" class="col-6"><?php echo $row1['NAME'] ?></dd>
+                  <dt class="col-6">Renter</dt>
+                  <dd name = "renter_name" class="col-6"><?php echo $row1['NAME'] ?></dd>
                   <dt class="col-6">Rate</dt>
                   <dd name = "rate" class="col-6">Rs. <?php echo $row1['AMOUNT'] ?></dd>
                   <dt class="col-6">From</dt>

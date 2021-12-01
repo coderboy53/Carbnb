@@ -6,7 +6,7 @@
   {
     $psw= hash('md5',$_POST['psw']);
     echo "<script>console.log('$psw'); </script>";
-    $sql="SELECT * FROM renter where EMAIL = :e AND PASSWORD = :p";
+    $sql="SELECT * FROM owner where EMAIL = :e AND PASSWORD = :p";
     $stmt=$pdo->prepare($sql);
       $stmt->execute(array(
           ':e' => $_POST['email'],
@@ -15,8 +15,8 @@
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
       if($row!==FALSE)
       {
-        $_SESSION['R_ID']=$row['R_ID'];
-        header("Location: renter/index2.php");
+        $_SESSION['O_ID']=$row['O_ID'];
+        header("Location: owner/index3.php");
       }
       else
       {
@@ -39,7 +39,7 @@
        <div class ='title'>
          <a href = "./index.php"><h1 class = 'sitehead'>Carbnb</h1></a>
        </div>
-       <form action="renter_login.php" method = "POST">
+       <form action="owner_login.php" method = "POST">
        <div class = 'textbox'>
           <input type = "email" name = "email" class = "email" placeholder="Email">
           <input type = "password" name = "psw" id = "password" placeholder="Password">
@@ -47,7 +47,7 @@
        <input type="submit" value = "Sign in">
        </form>
        <br><br>
-       <a id = 'create' href = './renter_register.php'>Don't have an account? Create one.</a>
+       <a id = 'create' href = './owner_register.php'>Don't have an account? Create one.</a>
        <p>
        <?php
         if ($msg!="")
