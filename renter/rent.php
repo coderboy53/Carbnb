@@ -75,7 +75,7 @@ else
             $from_date = $_POST['fdate'];
             $to_date = $_POST['tdate'];
             //SQL query to filter out the data according to the search
-            $sql = "SELECT c.VEHICLE_NO, c.COMPANY, c.MODEL, c.NO_OF_SEATS, c.RATE, o.NAME FROM car c INNER JOIN owner o ON c.O_EMAIL = o.EMAIL WHERE (c.COMPANY LIKE '%$names%' OR c.MODEL LIKE '%$names%') AND c.location LIKE '%$location%'";
+            $sql = "SELECT c.VEHICLE_NO, c.COMPANY, c.MODEL, c.NO_OF_SEATS, c.RATE, o.NAME FROM car c INNER JOIN owner o ON c.O_ID = o.O_ID WHERE (c.COMPANY LIKE '%$names%' OR c.MODEL LIKE '%$names%') AND c.location LIKE '%$location%'";
             //Executing SQL query
             $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
         ?>
