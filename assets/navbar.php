@@ -10,6 +10,6 @@
          <a href = './regist_car.php'>Register your Car</a>
          <a href = './safety.php'>Safety</a>
          <a href = './contact_us.php'>Contact Us</a>
-         <a href ='./login.php' id = "signup">Sign In</a>
+         <a href ='./login_redirect.html' id = "signup">Sign In</a>
        </div>
      </nav>

@@ -29,11 +29,10 @@ body{
   color: black;
 }
 #card-container{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
   background-color: rgb(255 255 255 / 95%);
-  height: 700px;
+  height: 600px;
   width: 600px;
   align-content: center;
   align-items: center;
@@ -57,18 +56,35 @@ body{
     align-items: center;
     align-content: center;
 }
-input[type=submit]{
-  background-color: rgb(65, 64, 64);
-  margin: 16px 32px;
-  width : 50%;
-  height: 10%;
-  color: white;
-  border-radius: 12px;
-  font-family: "Ubuntu", sans-serif;
-  font-size: 24px;
-  border: none;
+
+#card-area > h1{
+  padding: 15px;
 }
-input[type=submit]:hover{
+#card-holder {
+  display: flex;
+  flex-direction: row;
+}
+
+.card{
+  margin: 20px;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+#renter-card{
+  background: linear-gradient(rgb(49, 145, 219),yellow);
+}
+
+#owner-card{
+  background: linear-gradient(rgb(38, 199, 38),rgb(185, 144, 11));
+}
+#card-holder > a {
+  text-decoration: none;
+  color: black;
+}
+
+.card:hover{
   transition-delay: ease-in-out 200ms;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }

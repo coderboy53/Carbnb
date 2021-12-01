@@ -1,6 +1,6 @@
 <!-- DOCUMENT BEGINS HERE -->
 <?php
-  session_Start();
+  session_start();
   require_once "../config/pdo.php";
   //Message to display if the user is not logged in
   if(!isset($_SESSION['R_ID'])){

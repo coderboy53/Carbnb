@@ -89,7 +89,7 @@
     //SQL Query to insert all these data as a row into the feedback table
     $sql = "INSERT INTO feedback(NAME, EMAIL, PHONENUMBER, LOCATION, REVIEW_TYPE, DESCRIPTION, STATUS, A_ID) VALUES ('$fullname','$email','$phone','$location','$reviewType','$reviewDesc','$status','$a_id')";
     //Executing the Query
-    $res = mysqli_query($conn, $sql) or die(mysqli_error());
+    $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
     //Message displayed when the process is successful
     if($res == TRUE)
     {
