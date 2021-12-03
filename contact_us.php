@@ -39,8 +39,8 @@
               <!-- Entering Review Type -->
               <select name="reviewType" id = "reviewType">
                 <option value="select" selected disabled hidden>Review Type</option>
-                <option value="query">Query</option>
-                <option value="suggestions">Suggestions</option>
+                <option value="Query">Query</option>
+                <option value="Suggestions">Suggestions</option>
                 <option value="Complaint">Complaint</option>
               </select><br><br>
               <!-- Entering Description of their Feedback -->
