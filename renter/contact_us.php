@@ -39,10 +39,10 @@
               <!-- Entering Location -->
               <select name="location" id = "location">
                 <option value="select" selected disabled hidden>Location</option>
-                <option value="klk">Kolkata</option>
-                <option value="chn">Chennai</option>
-                <option value="mmb">Mumbai</option>
-                <option value="dlh">Delhi</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Delhi">Delhi</option>
               </select><br>
               <!-- Entering Review Type -->
               <select name="reviewType" id = "reviewType">
