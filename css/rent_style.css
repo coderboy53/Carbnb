@@ -96,7 +96,7 @@ main{
 .center{
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 70vh;
   align-items: center;
   justify-content: center;
 
@@ -107,13 +107,14 @@ main{
   margin: 10px;
 }
 
+
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  width: 80%;
+  width: 100%;
 }
 select{
   background-color: rgb(255 255 255 / 20%);
@@ -168,10 +169,12 @@ select:hover{
 }
 .search{
   display: flex;
-  width: 70%;
+  margin-left: 25%;
+  margin-right: 25%;
+  width: 50%;
   height: 20%;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
   border: none;
 }
 input[type=submit]{
@@ -199,6 +202,6 @@ p{
 
 form {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: sp;
 }
