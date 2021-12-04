@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2021 at 07:19 PM
+-- Generation Time: Dec 04, 2021 at 07:38 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -147,7 +147,8 @@ CREATE TABLE `feedback` (
 
 INSERT INTO `feedback` (`FEEDBACK_ID`, `NAME`, `EMAIL`, `PHONENUMBER`, `LOCATION`, `REVIEW_TYPE`, `DESCRIPTION`, `STATUS`, `A_ID`) VALUES
 (8, 'Shruthi S', 'shruthi.s2020@vitstudent.ac.in', 7777788888, 'chn', 'Query', 'top math?', 'OPEN', 1),
-(9, 'Subhendu Dash', 'subhendu.dash2020@vitstudent.ac.in', 7777788888, 'chn', 'Query', 'how to be topper', 'OPEN', 1);
+(9, 'Subhendu Dash', 'subhendu.dash2020@vitstudent.ac.in', 7777788888, 'chn', 'Query', 'how to be topper', 'OPEN', 1),
+(12, 'Shruti B', 'shruti.b2020@vitstudent.ac.in', 2222244444, 'chn', 'Query', 'How do i book a car?', 'OPEN', 1);
 
 -- --------------------------------------------------------
 
@@ -299,7 +300,7 @@ ALTER TABLE `car_review`
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `FEEDBACK_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `FEEDBACK_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `owner`
