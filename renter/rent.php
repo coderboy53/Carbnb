@@ -96,7 +96,7 @@ else
                 <form id = "cardetails" name = "cardetails" action = "" method = "post">
                   <dl class="row">
                   <dt class="col-6">Brand</dt>
-                  <dd name = "brand" class="col-6"><input type = "hidden" name = "brandin" value = "<?php echo $row1['COMPANY'] ?>"></dd>
+                  <dd name = "brand" class="col-6"><?php echo $row1['COMPANY'] ?></dd>
                   <dt class="col-6">No. of seats</dt>
                   <dd name = "no_of_seats" class="col-6"><?php echo $row1['NO_OF_SEATS'] ?></dd>
                   <dt class="col-6">Owner</dt>
