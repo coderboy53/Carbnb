@@ -4,3 +4,5 @@ A project to apply a new idea of solving problems regarding car rental by using 
 ## Technologies used
 - HTML
 - CSS
+- PHP
+- SQL
